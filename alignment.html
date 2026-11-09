@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <tittle>HTML Alignment</title>
+        <meta charset="UTF-8">
+        <style>
+            #box{
+                height: 75px;
+                width: 75px;
+                background-color:rgb(226, 43, 89);
+                color:rgb(255, 255, 255);
+                text-align: center;}
+                #grid-wrapper{
+                    display:grid;
+                    grid-template-columns: 2fr 1fr 100px;
+                    gap: 5px;
+
+                }
+
+             button{
+                    margin-top: 25px;
+                    padding: 25px;
+                }
+                #flex-wrapper {
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: center; 
+                    align-items: center;
+                    flex-wrap: wrap;
+                }
+                
+        </style>
+    </head>
+    <body>
+        <h1>HTML Alignment</h1>
+        <div id="grid-wrapper">
+            <div id="box">
+                <p>Box 1</p>
+            </div>
+            <div id="box">
+                <p>Box 2</p>
+            </div>
+            <div id="box">
+                <p>Box 3</p>
+            </div>
+            <div id="box">
+                <p>Box 4</p>
+            </div>
+            
+        <div id="flex-wrapper">
+            <div id="box">
+                <p>Box 1</p>
+            </div>
+            <div id="box">
+                <p>Box 2</p>
+            </div>
+            <div id="box">
+                <p>Box 3</p>
+            </div>
+            <div id="box">
+                <p>Box 4</p>
+            </div>
+            
+            <button>Click Me!</button>
+        
+    </body>
+</html>
