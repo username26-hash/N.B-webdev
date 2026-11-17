@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <title> notes </title>
+        <meta charset="UTF-8">
+        <style>
+            #box{
+                height: 75px;
+                width: 75px;
+                background-color:rgb(190, 24, 127);
+                color:black;
+                text-align:center;
+                /*margin:0 auto;*/
+            }
+            #grid-wrapper{
+                display: grid;
+                grid-template-columns: 1fr 1fr 100px;
+                gap: 5px;
+            }
+            button{
+                margin-top: 25px;
+                padding: 25px;
+            }
+            #flex-wrapper{
+                display:nonesss;
+                flex-direction:row;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>aliment notes</h1>
+        <img scr="https://www.bing.com/images/search?view=detailV2&ccid=2xc3YtGw&id=572CD62682D4F537EE566A05A6C790423A64369A&thid=OIP.2xc3YtGwZt7WlYMyngYusgHaEI&mediaurl=https%3a%2f%2fimages.pexels.com%2fphotos%2f1473080%2fpexels-photo-1473080.jpeg%3fcs%3dsrgb%26dl%3dpexels-raybilcliff-1473080.jpg%26fm%3djpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.db173762d1b066ded69583329e062eb2%3frik%3dmjZkOkKQx6YFag%26pid%3dImgRaw%26r%3d0&exph=1673&expw=3000&q=Sunset+On+Ocean&FORM=IRPRST&ck=873C8F4C24FB27A94E6A48C63647D803&selectedIndex=2&itb=0" alt="sunset" id="sunset" onmouseout="rotate">
+
+        <div id="grid-wrapper">
+            <div id="box" onmouseover="showHide">
+                    <p id="text"> show More</p>
+            </div>
+            <div id="box">
+                    <p> Box 2</p>
+                    </div>
+            <div id="box">
+                    <p> Box 3</p>
+                    </div>
+            <div id="box">
+                <p> Box 4</p>
+                </div>
+                </div>
+                <input type="color" id="newcolor">
+                <br>
+                <button onclick="changeColor()"> click me!</button>
+            <script>
+                let images = ["https://www.bing.com/images/search?view=detailV2&ccid=sk7oO%2bEG&id=A92DD8F4290CA3FE2FEA48FA9CCEFAC206EA4CA7&thid=OIP.sk7oO-EG4970fc_tehC4_QHaFj&mediaurl=https%3a%2f%2fimage.cdn2.seaart.me%2f2023-10-10%2f19507390228465669%2f35bdf8ee11a020b5ee225702b01d030a61c250c9_high.webp&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.b24ee83be106e3def47dcfed7a10b8fd%3frik%3dp0zqBsL6zpz6SA%26pid%3dImgRaw%26r%3d0&exph=3072&expw=4096&q=Sunset+On+Ocean&FORM=IRPRST&ck=9F4C02A8F4EBC1D64F20275021736A60&selectedIndex=3&itb=0 , https://www.bing.com/images/search?view=detailV2&ccid=xK9jyeJ6&id=A4D14AAF75488C45F25E3CD1843D9A88484DA7B3&thid=OIP.xK9jyeJ6c04t0oocSoIC0wHaE8&mediaurl=https%3a%2f%2fi.pinimg.com%2foriginals%2f88%2f41%2f95%2f884195033af830a61010afa256089ca7.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.c4af63c9e27a734e2dd28a1c4a8202d3%3frik%3ds6dNSIiaPYTRPA%26pid%3dImgRaw%26r%3d0&exph=1440&expw=2160&q=Sunset+On+Ocean&FORM=IRPRST&ck=56120BC6C88DE48A202EDE65F96BDDC3&selectedIndex=6&itb=0 , https://www.bing.com/images/search?view=detailV2&ccid=xK9jyeJ6&id=A4D14AAF75488C45F25E3CD1843D9A88484DA7B3&thid=OIP.xK9jyeJ6c04t0oocSoIC0wHaE8&mediaurl=https%3a%2f%2fi.pinimg.com%2foriginals%2f88%2f41%2f95%2f884195033af830a61010afa256089ca7.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.c4af63c9e27a734e2dd28a1c4a8202d3%3frik%3ds6dNSIiaPYTRPA%26pid%3dImgRaw%26r%3d0&exph=1440&expw=2160&q=Sunset+On+Ocean&FORM=IRPRST&ck=56120BC6C88DE48A202EDE65F96BDDC3&selectedIndex=6&itb=0, https://www.bing.com/images/search?view=detailV2&ccid=xK9jyeJ6&id=A4D14AAF75488C45F25E3CD1843D9A88484DA7B3&thid=OIP.xK9jyeJ6c04t0oocSoIC0wHaE8&mediaurl=https%3a%2f%2fi.pinimg.com%2foriginals%2f88%2f41%2f95%2f884195033af830a61010afa256089ca7.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.c4af63c9e27a734e2dd28a1c4a8202d3%3frik%3ds6dNSIiaPYTRPA%26pid%3dImgRaw%26r%3d0&exph=1440&expw=2160&q=Sunset+On+Ocean&FORM=IRPRST&ck=56120BC6C88DE48A202EDE65F96BDDC3&selectedIndex=6&itb=0 "]
+                let currentImage = 0
+                function rotate(){
+                    current-Image += 1
+                    if current-Image > 3
+                        current-Image = 0 
+                    document.getElementById("sunset").src = images[current-Image]
+                }
+                function changeColor(){
+                    let currentColor = document.getElementById ("newColor").value
+                    document.getElementById("box").style.backgroundColor = currentColor
+                }
+                function showHide(){
+                    let item = document.getElementById("flex-wrapper").style.display
+                    if(item == "flex"){
+                        item.stle.display ="none"
+                        document.getElementById("text").innerHTML = "show Less"
+                }else{
+                    item.stle.display = "flex"
+                }
+            </script>
+    </body>
+</html>
+
+
+
+
