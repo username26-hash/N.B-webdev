@@ -19,6 +19,7 @@
 
         .parkcity1 {
             width: 300px;
+            
         }
 
         .parkcity2 {
@@ -51,6 +52,7 @@
         .parkcity, .parki {
             width: 100%;
             margin: 10px;
+            padding: 2.5
         }
 
         button {
@@ -81,6 +83,96 @@
  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQGB9cy8RMSVJL1I4vUudxpKqaeddw84ffDuBrp1lzA&s=10"
  alt="Park City"
  class="parkcity3"
+>   
+ <div id="hoversection">
+        <img id="hoverimage"
+        src="https://i.pinimg.com/originals/49/5c/0f/495c0fce301b8b41956f78ef33122c9c.jpg"
+        alt="vinyl record"
+        onmouseover="rotate()"
+        onmouseout="rotateback()">
+        <p>First image from dreamstime. Second image from: Pinterest</p>
+
+    </div>
+
+    <div id="grid-wrapper">
+
+        <img class="music"
+        src="https://freesvg.org/img/vinyl-plokstele.png"
+        alt="red cd">
+
+        <img class="musi"
+        src="https://upload.wikimedia.org/wikipedia/commons/1/11/Vinyl_record_orange.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+        alt="orange cd">
+
+    </div>
+
+    <div id="extra">
+
+        <h2>Why music makes me happy</h2>
+
+        <p>
+            Music is something that I can listen to whenever I want. It helps me relax and makes me feel better when I have had a long day. I like how there are so many different songs and genres to choose from and everyone can find something they enjoy.
+        </p>
+
+        <img class="music1"
+        src="https://i.pinimg.com/736x/1b/92/09/1b9209166573ea3753ae633a1fec37e9.jpg"
+        alt="music">
+        <p>Image from: Pinterest</p>
+
+    </div>
+
+
+    <button onclick="showhide()" id="text">Show More</button>
+
+
+    <script>
+
+        let images = [
+            "https://i.pinimg.com/originals/49/5c/0f/495c0fce301b8b41956f78ef33122c9c.jpg",
+            "https://thumbs.dreamstime.com/b/timeless-classic-vinyl-record-featuring-striking-red-center-label-high-quality-image-vintage-black-perfect-music-402981046.jpg"
+        ]
+
+        let currentimage = 0
+
+        function rotate() {
+            currentimage = 1
+            document.getElementById("hoverimage").src = images[currentimage]
+        }
+
+        function rotateback() {
+            currentimage = 0
+            document.getElementById("hoverimage").src = images[currentimage]
+        }
+
+        function showhide() {
+
+            let item = document.getElementById("extra")
+
+            if (item.style.display == "block") {
+
+                item.style.display = "none"
+
+                document.getElementById("text").innerHTML = "Show More"
+
+            }
+
+            else {
+
+                item.style.display = "block"
+
+                document.getElementById("text").innerHTML = "Show Less"
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+
 
 </body>
 </html>
